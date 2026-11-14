@@ -1,11 +1,8 @@
 # SEC 521 Network Security: Baseline Reproduction
-## Target Paper: StormShield (ACM WiSec 2026)
+## Baseline Paper: StormShield (ACM WiSec 2026)
 **Paper Title:** *StormShield: Fingerprint-Based Detection and Mitigation of RRC Signaling Storms in O-RAN 5G RANs*  
 **Authors:** Noemi Giustini, Andrea Lacava, Leonardo Bonati, Stefano Maxenti, Michele Polese, Tommaso Melodia, Francesca Cuomo  
 **Student:** Shahad Alghamdi (Student ID: 202524470)  
-**Institution:** King Fahd University of Petroleum and Minerals (KFUPM), Department of Information and Computer Science  
-**Course:** SEC 521 Network Security (Term 241, Fall 2026)  
-**GitHub Repository:** [https://github.com/shahadghamd0/SEC521_Baseline_Reproduction](https://github.com/shahadghamd0/SEC521_Baseline_Reproduction)
 
 ---
 
