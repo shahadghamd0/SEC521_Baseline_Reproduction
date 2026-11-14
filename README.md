@@ -17,28 +17,10 @@ The primary artifact is **`Baseline_Reproduction_Workbook.ipynb`**, a completely
 2. **Target Result 2 (Table 5):** Parameter fine-tuning trade-offs across configurations E1 through E7 under fixed scenario conditions, validating the near-zero Collateral Blocking Rate (CBR) of the calibrated baseline (E1) and replicating the severe collateral blocking penalty of excessive clustering radii (E3).
 3. **Target Result 3 (Table 4 & Spatial Sensitivity Analysis):** Spatial sensitivity evaluation across relative fingerprint separations ($\Delta \in [3.5, 12.0]\text{ dB}$), reproducing the baseline's $17\%$--$25\%$ collateral blocking limitation ($23.7\%$ mean CBR) and legitimate connection degradation.
 
----
-
-### 2. Repository Structure
-
-```text
-├── Baseline_Reproduction_Workbook.ipynb  # Self-contained interactive workbook (pre-executed with all charts & tables)
-├── README.md                             # Documentation, execution guide, and reproduction summary
-├── figures/                              # Publication-ready reproduction charts (PDF & PNG)
-│   ├── fig6_depletion_comparison.png     # Figure 6: Context depletion latency comparison
-│   ├── fig6_depletion_comparison.pdf
-│   ├── table5_parameter_tradeoffs.png    # Table 5: Clustering radius trade-off (E2 vs E1 vs E3)
-│   ├── table5_parameter_tradeoffs.pdf
-│   ├── table4_mobility_cbr.png           # Table 4 Sensitivity: Collateral blocking across separations L1–L5
-│   └── table4_mobility_cbr.pdf
-├── baseline_reproduction.tex             # Formal 4-page USENIX conference report (LaTeX)
-├── baseline_refs.bib                     # BibTeX reference bibliography
-└── usenix.sty                            # Official USENIX two-column conference stylesheet
-```
 
 ---
 
-### 3. Workbook Architecture (`Baseline_Reproduction_Workbook.ipynb`)
+### 2. Workbook Architecture (`Baseline_Reproduction_Workbook.ipynb`)
 
 The workbook is structured into 6 interactive sections:
 
@@ -57,7 +39,7 @@ The workbook is structured into 6 interactive sections:
 
 ---
 
-### 4. Reproduction Results Summary
+### 3. Reproduction Results Summary
 
 | Target Result / Experiment | StormShield Published (WiSec '26) | Reproduced in Workbook | Status & Discrepancy Analysis |
 | :--- | :---: | :---: | :--- |
@@ -71,7 +53,7 @@ The workbook is structured into 6 interactive sections:
 
 ---
 
-### 5. Quickstart & How to View
+### 4. Quickstart & How to View
 
 * **Directly on GitHub:** Clicking [`Baseline_Reproduction_Workbook.ipynb`](Baseline_Reproduction_Workbook.ipynb) displays all explanations, code cells, terminal printouts, and plots rendered natively in your browser without running any commands.
 * **Locally in Jupyter:**
@@ -82,17 +64,11 @@ The workbook is structured into 6 interactive sections:
 
 ---
 
-### 6. Hardware & Environment Specifications
+### 5. Hardware & Environment Specifications
 * **Machine:** Apple MacBook Air 15-inch (Apple M3 Silicon, 8-core CPU, 10-core GPU)
 * **Memory:** 16 GB Unified RAM
 * **Operating System:** macOS Sequoia 15.3.2 (Darwin 24.3.0 arm64)
 * **Python Runtime:** Python 3.13.3
 * **Libraries:** `numpy` (2.5.4), `matplotlib` (3.11.2), `scikit-learn` (1.9.1), `scipy` (1.18.1), `notebook` (7.3.2)
 
----
 
-### 7. AI Assistance Declaration
-*(Submitted pursuant to Section 8.3 of the SEC 521 Course Project Syllabus)*
-* **Tools and Models Used:** Google Antigravity Agentic AI Assistant powered by Gemini 2.5 Pro.
-* **Scope of Assistance:** Scaffolding the discrete-event simulation structure in `Baseline_Reproduction_Workbook.ipynb`, optimizing `matplotlib` chart layouts, and formatting the two-column USENIX LaTeX report.
-* **Student Verification:** All code cells, simulation parameters, and discrepancy analyses were executed, inspected, and verified directly by the author on native hardware.
