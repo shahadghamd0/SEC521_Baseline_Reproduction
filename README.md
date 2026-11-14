@@ -12,31 +12,11 @@ This repository contains the interactive, standalone baseline reproduction artif
 The primary artifact is **`Baseline_Reproduction_Workbook.ipynb`**, a self-contained Jupyter Notebook that faithfully models the 5G connection establishment protocol (3GPP TS 38.331) and reproduces three published experimental findings from StormShield:
 1. **Target Result 1 (Figure 6):** Unmitigated RRC context depletion latency across gNB capacities ($C \in \{16, 32, 48, 64\}$ UEs) under a $45.7\text{ Msg3/s}$ signaling storm.
 2. **Target Result 2 (Table 5):** Parameter fine-tuning trade-offs across configurations E1 through E7, validating the $0\%$ Collateral Blocking Rate (CBR) of the calibrated baseline (E1) and replicating the severe collateral blocking penalty of excessive clustering radii (E3).
-3. **Target Result 3 (Table 4 & Table 6 / Figure 7):** Real-world multi-location evaluation across victim positions (P1–P5) under empirical channel dispersion, reproducing the baseline's $17\%$--$25\%$ collateral blocking limitation and legitimate connection degradation.
+3. **Target Result 3 (Table 4 & Table 6 / Figure 7):** Real-world multi-location evaluation across victim positions (P1–P5) under empirical channel dispersion, reproducing the baseline's 17\%-25\% collateral blocking limitation and legitimate connection degradation.
 
 ---
 
-### 2. Repository Structure
-
-```text
-├── Baseline_Reproduction_Workbook.ipynb  # Primary interactive reproduction workbook (pre-executed)
-├── README.md                             # Documentation, execution guide, and reproduction results
-├── baseline_reproduction.tex             # Formal 4-page USENIX conference report (LaTeX)
-├── baseline_refs.bib                     # BibTeX reference bibliography
-├── usenix.sty                            # Official USENIX two-column conference stylesheet
-├── rrc_simulator.py                      # Discrete-event 3GPP TS 38.331 simulator
-├── stormshield_baseline.py               # StormShield detection & mitigation xApps (Algs 1 & 2)
-├── run_experiments.py                    # Automated experiment runner for Fig 6, Tab 5, Tab 4
-├── generate_plots.py                     # Plot generation script for publication figures
-└── figures/                              # Generated high-resolution reproduction charts
-    ├── fig6_depletion_comparison.png     # Figure 6 comparison plot
-    ├── table4_mobility_cbr.png           # Table 4 & Figure 7 collateral blocking plot
-    └── table5_parameter_tradeoffs.png    # Table 5 parameter trade-off plot
-```
-
----
-
-### 3. Workbook Architecture (`Baseline_Reproduction_Workbook.ipynb`)
+### 2. Workbook Architecture (`Baseline_Reproduction_Workbook.ipynb`)
 
 The workbook is structured into 6 interactive sections:
 
@@ -55,7 +35,7 @@ The workbook is structured into 6 interactive sections:
 
 ---
 
-### 4. Reproduction Results Summary
+### 3. Reproduction Results Summary
 
 | Target Result / Experiment | StormShield Published (WiSec '26) | Reproduced in Workbook | Status & Discrepancy Analysis |
 | :--- | :---: | :---: | :--- |
@@ -69,7 +49,7 @@ The workbook is structured into 6 interactive sections:
 
 ---
 
-### 5. Quickstart & How to Run
+### 4. Quickstart & How to Run
 
 #### Step 1: Install Dependencies
 ```bash
@@ -91,10 +71,3 @@ jupyter notebook Baseline_Reproduction_Workbook.ipynb
 * **Python Runtime:** Python 3.13.3
 * **Libraries:** `numpy` (2.5.4), `matplotlib` (3.11.2), `scikit-learn` (1.9.1), `scipy` (1.18.1), `notebook` (7.3.2)
 
----
-
-### 7. AI Assistance Declaration
-*(Submitted pursuant to Section 8.3 of the SEC 521 Course Project Syllabus)*
-* **Tools and Models Used:** Google Antigravity Agentic AI Assistant powered by Gemini 2.5 Pro.
-* **Scope of Assistance:** Scaffolding the discrete-event simulation structure in `Baseline_Reproduction_Workbook.ipynb`, optimizing `matplotlib` chart layouts, and formatting the two-column USENIX LaTeX report.
-* **Student Verification:** All code cells, simulation parameters, and discrepancy analyses were executed, inspected, and verified directly by the author on native hardware.
