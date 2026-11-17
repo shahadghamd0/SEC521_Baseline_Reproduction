@@ -12,7 +12,7 @@ This repository contains the interactive, standalone baseline reproduction artif
 The primary artifact is **`Baseline_Reproduction_Workbook.ipynb`**, a completely self-contained Jupyter Notebook that faithfully models the 5G connection establishment protocol (modelled after 3GPP TS 38.331) and reproduces three published experimental findings from StormShield:
 1. **Target Result 1 (Figure 6):** Unmitigated RRC context depletion latency across gNB capacities ($C \in \{16, 32, 48, 64\}$ UEs) under a $45.7\text{ Msg3/s}$ signaling storm.
 2. **Target Result 2 (Table 5):** Parameter fine-tuning trade-offs across configurations E1 through E7 under fixed scenario conditions, validating the near-zero Collateral Blocking Rate (CBR) of the calibrated baseline (E1) and replicating the severe collateral blocking penalty of excessive clustering radii (E3).
-3. **Target Result 3 (Table 4 & Spatial Sensitivity Analysis):** Spatial sensitivity evaluation across relative fingerprint separations ($\Delta \in [3.5, 12.0]\text{ dB}$), reproducing the baseline's $17\%$--$25\%$ collateral blocking limitation ($23.7\%$ mean CBR) and legitimate connection degradation.
+3. **Target Result 3 (Table 4 & Spatial Sensitivity Analysis):** Spatial sensitivity evaluation across relative fingerprint separations ($\Delta \in [3.5, 12.0]\text{ dB}$), reproducing the baseline's 17\%-25\% collateral blocking limitation ($23.7\%$ mean CBR) and legitimate connection degradation.
 
 
 ---
