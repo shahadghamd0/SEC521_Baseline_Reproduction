@@ -1,5 +1,5 @@
 # SEC 521 Network Security: Baseline Reproduction
-## Target Paper: StormShield (ACM WiSec 2026)
+## Baseline Paper: StormShield (ACM WiSec 2026)
 **Paper Title:** *StormShield: Fingerprint-Based Detection and Mitigation of RRC Signaling Storms in O-RAN 5G RANs*  
 **Authors:** Noemi Giustini, Andrea Lacava, Leonardo Bonati, Stefano Maxenti, Michele Polese, Tommaso Melodia, Francesca Cuomo  
 **Student:** Shahad Alghamdi (Student ID: 202524470)  
@@ -7,7 +7,7 @@
 ---
 
 ### 1. Executive Summary
-This repository contains the interactive, standalone baseline reproduction artifact for **Task 3** of the SEC 521 course project, pursuant to Section 2.5 and Section 6.1 of the course guidelines. 
+This repository contains the interactive, standalone baseline reproduction artifact for **Task 3** of the SEC521 course project. 
 
 The primary artifact is **`Baseline_Reproduction_Workbook.ipynb`**, a completely self-contained Jupyter Notebook that faithfully models the 5G connection establishment protocol (modelled after 3GPP TS 38.331) and reproduces three published experimental findings from StormShield:
 1. **Target Result 1 (Figure 6):** Unmitigated RRC context depletion latency across gNB capacities ($C \in \{16, 32, 48, 64\}$ UEs) under a $45.7\text{ Msg3/s}$ signaling storm.
