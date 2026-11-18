@@ -90,10 +90,4 @@ The workbook is structured into 7 interactive sections:
 * **Python Runtime:** Python 3.13.3
 * **Libraries:** `numpy` (2.5.4), `matplotlib` (3.11.2), `scikit-learn` (1.9.1), `scipy` (1.18.1), `notebook` (7.3.2)
 
----
 
-### 7. AI Assistance Declaration
-*(Submitted pursuant to Section 8.3 of the SEC 521 Course Project Syllabus)*
-* **Tools and Models Used:** Google Antigravity Agentic AI Assistant powered by Gemini 2.5 Pro.
-* **Scope of Assistance:** Scaffolding the discrete-event simulation structure in `Baseline_Reproduction_Workbook.ipynb`, optimizing `matplotlib` chart layouts, and formatting the two-column USENIX LaTeX report.
-* **Student Verification:** All code cells, simulation parameters, and discrepancy analyses were executed, inspected, and verified directly by the author on native hardware.
