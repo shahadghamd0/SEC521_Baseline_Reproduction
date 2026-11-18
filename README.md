@@ -40,7 +40,7 @@ The primary artifact is **`Baseline_Reproduction_Workbook.ipynb`**, a completely
 
 ### 3. Workbook Architecture (`Baseline_Reproduction_Workbook.ipynb`)
 
-The workbook is structured into 6 interactive sections:
+The workbook is structured into 7 interactive sections:
 
 * **Part 1: 5G RRC Signaling Storm Architecture (Modelled after 3GPP TS 38.331)**  
   Defines the discrete-event simulation engine with finite context table capacity and the gNB context setup wait timer ($2.7\text{ s}$, measured in OpenAirInterface by Nguyen et al.; distinct from the UE-side $T_{300}$ timer). Demonstrates a single $45.7\text{ Msg3/s}$ attack exhausting a $16$-context table in $327.7\text{ ms}$ (vs. paper's $318\text{ ms}$).
@@ -54,6 +54,8 @@ The workbook is structured into 6 interactive sections:
   Contrasts theoretical Table 6 empirical distributions (where pure 1D LoS fading yields only $1.5\%$ CBR) with a spatial sensitivity sweep ($\Delta \in [3.5, 12.0]\text{ dB}$), showing that proximate co-location ($\Delta \le 5\text{ dB}$) produces legitimate connection degradation ($47.5\%$ to $99.2\%$) and an overall mean CBR of $23.7\%$ (matching Table 4's $17\%\text{--}25\%$ range).
 * **Part 6: Summary of Findings & Transition to Task 4**  
   Summarizes validated targets and articulates the motivation for Task 4: replacing static radii with an online variance-adaptive boundary $\epsilon(t) = \beta \cdot \sigma(t) + \epsilon_{\text{base}}$.
+* **Part 7: Task 4 Pilot Implementation (StormShield-Adapt)**  
+  Implements the proposed variance-adaptive clustering xApp (`StormShieldAdaptXApp`) with dynamic radius $\epsilon_{\text{RSSI}}(t) = \beta \cdot \sigma(t) + \epsilon_{\text{base}}$ alongside a Fixed $3.5\text{ dB}$ ablation arm and the baseline ($4.0\text{ dB}$). Evaluates across 60 randomized trials with deterministic seeds (`zlib.crc32`), diagnosing the fundamental trade-off between direct filter over-blocking (halved from $21.7\%$ to $11.2\%$) and attacker request leakage ($10\%$), establishing the empirical foundation for attacker-bounded adaptation in Task 5.
 
 ---
 
