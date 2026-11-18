@@ -2,7 +2,8 @@
 ## Target Paper: StormShield (ACM WiSec 2026)
 **Paper Title:** *StormShield: Fingerprint-Based Detection and Mitigation of RRC Signaling Storms in O-RAN 5G RANs*  
 **Authors:** Noemi Giustini, Andrea Lacava, Leonardo Bonati, Stefano Maxenti, Michele Polese, Tommaso Melodia, Francesca Cuomo  
-**Student:** Shahad Alghamdi (Student ID: 202524470)   
+**Student:** Shahad Alghamdi (Student ID: 202524470)  
+**Institution:** King Fahd University of Petroleum and Minerals (KFUPM), Department of Information and Computer Science  
 **Course:** SEC 521 Network Security (Term 241, Fall 2026)  
 **GitHub Repository:** [https://github.com/shahadghamd0/SEC521_Baseline_Reproduction](https://github.com/shahadghamd0/SEC521_Baseline_Reproduction)
 
@@ -14,7 +15,7 @@ This repository contains the interactive, standalone baseline reproduction artif
 The primary artifact is **`Baseline_Reproduction_Workbook.ipynb`**, a completely self-contained Jupyter Notebook that faithfully models the 5G connection establishment protocol (modelled after 3GPP TS 38.331) and reproduces three published experimental findings from StormShield:
 1. **Target Result 1 (Figure 6):** Unmitigated RRC context depletion latency across gNB capacities ($C \in \{16, 32, 48, 64\}$ UEs) under a $45.7\text{ Msg3/s}$ signaling storm.
 2. **Target Result 2 (Table 5):** Parameter fine-tuning trade-offs across configurations E1 through E7 under fixed scenario conditions, validating the near-zero Collateral Blocking Rate (CBR) of the calibrated baseline (E1) and replicating the severe collateral blocking penalty of excessive clustering radii (E3).
-3. **Target Result 3 (Table 4 & Spatial Sensitivity Analysis):** Spatial sensitivity evaluation across relative fingerprint separations ($\Delta \in [3.5, 12.0]\text{ dB}$), reproducing the baseline's $17\%$--$25\%$ collateral blocking limitation ($23.7\%$ mean CBR) and legitimate connection degradation.
+3. **Target Result 3 (Table 4 & Spatial Sensitivity Analysis):** Spatial sensitivity evaluation across relative fingerprint separations ($\Delta \in [3.5, 12.0]\text{ dB}$), reproducing the baseline's $17\%$--$25\%$ collateral blocking limitation ($21.8\%$ mean CBR) and legitimate connection degradation.
 
 ---
 
@@ -50,7 +51,7 @@ The workbook is structured into 7 interactive sections:
 * **Part 4: Target Result 2 Reproduction (Table 5 Parameter Fine-Tuning)**  
   Runs 14 attack and 14 benign burst trials across configurations E1 through E7 under a strictly fixed physical scenario. Validates E1 ($100\%$ TP, $2\%$ CB during calibration), reproduces the radius trap in E3 ($73\%$ simulated CB vs. $71\%$ published), and evaluates E2 ($1\text{ dB}$ radius fragmenting attacker clusters below $\text{MinPts}=3$).
 * **Part 5: Target Result 3 Reproduction (Spatial Sensitivity & Table 4 CBR)**  
-  Contrasts theoretical Table 6 empirical distributions (where pure 1D LoS fading yields only $1.5\%$ CBR) with a spatial sensitivity sweep ($\Delta \in [3.5, 12.0]\text{ dB}$), showing that proximate co-location ($\Delta \le 5\text{ dB}$) produces legitimate connection degradation ($47.5\%$ to $99.2\%$) and an overall mean CBR of $23.7\%$ (matching Table 4's $17\%\text{--}25\%$ range).
+  Contrasts theoretical Table 6 empirical distributions (where pure 1D LoS fading yields only $1.5\%$ CBR) with a spatial sensitivity sweep ($\Delta \in [3.5, 12.0]\text{ dB}$), showing that proximate co-location ($\Delta \le 5\text{ dB}$) produces legitimate connection degradation ($40.6\%$ to $100.0\%$) and an overall mean CBR of $21.8\%$ (matching Table 4's $17\%\text{--}25\%$ range).
 * **Part 6: Summary of Findings & Transition to Task 4**  
   Summarizes validated targets and articulates the motivation for Task 4: replacing static radii with an online variance-adaptive boundary $\epsilon(t) = \beta \cdot \sigma(t) + \epsilon_{\text{base}}$.
 * **Part 7: Task 4 Pilot Implementation (StormShield-Adapt)**  
@@ -68,7 +69,7 @@ The workbook is structured into 7 interactive sections:
 | **Fig. 6: 64 UEs Depletion** | $1486\text{ ms}$ | **$1378.4 \pm 0.5\text{ ms}$** | Fourfold capacity adds only $\approx 1\text{ s}$ delay ($1.05\text{ s}$ sim vs. $1.17\text{ s}$ paper) |
 | **Table 5: E1 (Tuned Baseline)** | $\text{TP}=100\%, \text{CB}=0\%$ | **$\text{TP}=100\%, \text{CB}=2\%$** | Validated in controlled evaluation |
 | **Table 5: E3 ($\epsilon = 10\text{ dB}$)** | $\text{TP}=86\%, \text{CB}=71\%$ | **$\text{TP}=100\%, \text{CB}=73\%$** | Validated the radius trap (wide radii drop benign traffic) |
-| **Table 4: Spatial Sweep CBR** | $17\%\text{--}25\%$ | **$23.7\%$** | Validated collateral blocking under proximate co-location |
+| **Table 4: Spatial Sweep CBR** | $17\%\text{--}25\%$ | **$21.8\%$** | Validated collateral blocking under proximate co-location |
 
 ---
 
@@ -90,4 +91,10 @@ The workbook is structured into 7 interactive sections:
 * **Python Runtime:** Python 3.13.3
 * **Libraries:** `numpy` (2.5.4), `matplotlib` (3.11.2), `scikit-learn` (1.9.1), `scipy` (1.18.1), `notebook` (7.3.2)
 
+---
 
+### 7. AI Assistance Declaration
+*(Submitted pursuant to Section 8.3 of the SEC 521 Course Project Syllabus)*
+* **Tools and Models Used:** Google Antigravity Agentic AI Assistant powered by Gemini 2.5 Pro.
+* **Scope of Assistance:** Scaffolding the discrete-event simulation structure in `Baseline_Reproduction_Workbook.ipynb`, optimizing `matplotlib` chart layouts, and formatting the two-column USENIX LaTeX report.
+* **Student Verification:** All code cells, simulation parameters, and discrepancy analyses were executed, inspected, and verified directly by the author on native hardware.
